@@ -1,7 +1,7 @@
 // Dependencies
 const express = require("express");
 const app = express();
-const PORT = 3003;
+const PORT = process.env.PORT || 3003;
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -9,6 +9,8 @@ const path = require("path");
 const appointmentController = require("./controllers/appointment.js");
 const userController = require("./controllers/users.js");
 const sessionController = require("./controllers/session.js");
+const mongodbURI =
+  process.env.MONGODB_URI || "mongodb://localhost:27017/patientDB";
 
 //==============================
 //     MONGOOSE CONNECTION
@@ -22,7 +24,7 @@ mongoose.connection.on("error", error =>
 mongoose.connection.on("disconnected", () => console.log("mongo disconnected"));
 
 // CONNECT
-mongoose.connect("mongodb://localhost:27017/patientDB", {
+mongoose.connect(mongodbURI, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
