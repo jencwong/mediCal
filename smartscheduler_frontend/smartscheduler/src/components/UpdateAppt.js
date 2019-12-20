@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
+
+let baseURL = "https://medicalendar-app.herokuapp.com";
+
+if (process.env.NODE_ENV === "development") {
+  baseURL = "http://localhost:3003";
+}
+
 class UpdateAppt extends Component {
   constructor() {
     super();
@@ -32,7 +39,7 @@ class UpdateAppt extends Component {
     try {
       event.preventDefault();
       const appointmentID = this.props.appointment._id;
-      const url = `http://localhost:3003/appointment/${appointmentID}`;
+      const url = `${baseURL}/appointment/${appointmentID}`;
       const payload = {
         date: this.state.date,
         time: this.state.time,

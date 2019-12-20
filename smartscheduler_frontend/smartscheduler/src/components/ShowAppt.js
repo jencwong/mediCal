@@ -1,11 +1,13 @@
 import React from "react";
 import axios from "axios";
 let baseURL = process.env.REACT_APP_BASEURL;
+
+let baseURL = "https://medicalendar-app.herokuapp.com";
+
 if (process.env.NODE_ENV === "development") {
   baseURL = "http://localhost:3003";
-} else {
-  baseURL = "heroku or other backend url here";
 }
+
 class ShowAppt extends React.Component {
   constructor(props) {
     super(props);

@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 
-const baseURL = "http://localhost:3003";
+let baseURL = "https://medicalendar-app.herokuapp.com";
+
+if (process.env.NODE_ENV === "development") {
+  baseURL = "http://localhost:3003";
+}
 
 class SignInForm extends Component {
   constructor() {

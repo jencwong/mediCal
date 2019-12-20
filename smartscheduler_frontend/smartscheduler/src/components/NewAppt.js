@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
+
+let baseURL = "https://medicalendar-app.herokuapp.com";
+
+if (process.env.NODE_ENV === "development") {
+  baseURL = "http://localhost:3003";
+}
+
 class NewAppt extends Component {
   constructor(props) {
     super(props);

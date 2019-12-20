@@ -11,12 +11,12 @@ import ShowAppt from "./ShowAppt.js";
 import "../App2.css";
 import Button from "@material-ui/core/Button";
 
-let baseURL = process.env.REACT_APP_BASEURL;
+let baseURL = "https://medicalendar-app.herokuapp.com";
+
 if (process.env.NODE_ENV === "development") {
   baseURL = "http://localhost:3003";
-} else {
-  baseURL = "heroku or other backend url here";
 }
+
 // const baseURL = "http://localhost:3003";
 //==============================
 //        COMPONENTS

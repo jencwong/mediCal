@@ -16,12 +16,10 @@ import Button from "@material-ui/core/Button";
 
 // import CurrentAppointments from ".CurrentAppointments.js";
 
-let baseURL = process.env.REACT_APP_BASEURL;
+let baseURL = "https://medicalendar-app.herokuapp.com";
 
 if (process.env.NODE_ENV === "development") {
   baseURL = "http://localhost:3003";
-} else {
-  baseURL = "heroku or other backend url here";
 }
 
 class Patient extends Component {

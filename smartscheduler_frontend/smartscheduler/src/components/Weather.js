@@ -6,11 +6,10 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import axios from "axios";
 import "../App2.css";
 
-let baseURL = process.env.REACT_APP_BASEURL;
+let baseURL = "https://medicalendar-app.herokuapp.com";
+
 if (process.env.NODE_ENV === "development") {
   baseURL = "http://localhost:3003";
-} else {
-  baseURL = "heroku or other backend url here";
 }
 
 //==============================

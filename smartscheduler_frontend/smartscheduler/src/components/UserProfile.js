@@ -2,6 +2,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+let baseURL = "https://medicalendar-app.herokuapp.com";
+
+if (process.env.NODE_ENV === "development") {
+  baseURL = "http://localhost:3003";
+}
+
 class UserProfile extends Component {
   constructor() {
     super();
@@ -39,7 +45,7 @@ class UserProfile extends Component {
     try {
       event.preventDefault();
       const userID = this.props._id;
-      const url = `http://localhost:3003/user/${userID}`;
+      const url = `${baseURL}/user/${userID}`;
       const payload = {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
