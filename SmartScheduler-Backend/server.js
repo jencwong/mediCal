@@ -35,7 +35,12 @@ mongoose.connection.once("open", () => {
   console.log("connected to mongoose...");
 });
 
-const whitelist = ["http://localhost:3000"];
+const whitelist = [
+  "http://localhost:3000",
+  "http://medicalendar-app.surge.sh",
+  "https://medicalendar-app.surge.sh"
+];
+
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
